@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>  
-  <!-- Google tag (gtag.js) -->
+<head> 
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-H31M2BE30M"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -12,7 +12,7 @@
 </script>  
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CPS Tester</title>
+<title>Mouse Click Tracker</title>
 <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -198,6 +198,25 @@ button:hover {
             margin-left: 80%;
             cursor: pointer; /* Add cursor pointer */
         }
+.contact-me {
+            margin-left: 80%;
+            cursor: pointer;
+            text-align: center;
+            color: #ffffff;
+            font-size: 16px; /* Adjust font size as needed */
+            padding: 8px 16px; /* Adjust padding as needed */
+            border: 2px solid #f7f9fb;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: inline-block; /* Ensures button width fits content */
+            line-height: 1; /* Reset line height */
+            background-color: transparent; /* Reset background color */
+            text-decoration: none; /* Reset text decoration */
+        }
+        .contact-me:hover {
+            background-color: #bfdb9f;
+            color: #fff;
+        }
 </style>
 </head>
 <body onload="initializeTracking()">
@@ -229,10 +248,8 @@ button:hover {
         <p id="resultMessage"></p>
         <canvas id="clickChart" width="50" height="25"></canvas>
         <p id="highestScore">Highest Score: 0</p>
-        <p onclick="redirectToAnotherPage()">Contact me</p>
-      
     </div>
- 
+    <p class="contact-me" onclick="redirectToAnotherPage2()">Contact me</p>
     
     <script>
         let clickCount = 0;
@@ -246,6 +263,10 @@ button:hover {
         function redirectToAnotherPage() {
             // Replace 'another-page.html' with the path to the HTML page you want to navigate to
             window.location.href = 'right.html';
+        }
+        function redirectToAnotherPage2() {
+            // Replace 'another-page.html' with the path to the HTML page you want to navigate to
+            window.location.href = 'contact.html';
         }
 
         function initializeTracking() {
