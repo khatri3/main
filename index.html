@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>  
- <!-- Google tag (gtag.js) -->
+  <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-H31M2BE30M"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -9,7 +9,7 @@
   gtag('js', new Date());
 
   gtag('config', 'G-H31M2BE30M');
-</script>     
+</script>  
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mouse Click Tracker</title>
@@ -28,7 +28,7 @@ body {
 #clickChartContainer {
     max-width: 60%;
     margin: auto;
-    background: #fff;
+    background: #f0eaea;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -192,12 +192,18 @@ button:hover {
     font-weight: bold;
     color: #4CAF50;
 }
-
+.right-click-icon {
+            width: 24px; /* Adjust width as needed */
+            height: 24px; /* Adjust height as needed */
+            margin-left: 80%;
+            cursor: pointer; /* Add cursor pointer */
+        }
 </style>
 </head>
 <body onload="initializeTracking()">
     <div id="clickChartContainer">
-        <h1>Mouse Click Tracker</h1>
+        <img src="right.png" alt="Right Click" class="right-click-icon" title="Right Click" onclick="redirectToAnotherPage()"> right-click
+        <h1>Mouse Click Tracker</h1> 
         <p>First set time between 1, 5, 10, 20, or 60 seconds:</p>
         <select id="timeInterval">
             <option value="1">1 second</option>
@@ -233,7 +239,11 @@ button:hover {
         let startTime;
         let chart;
         let timerStarted = false;
-        
+
+        function redirectToAnotherPage() {
+            // Replace 'another-page.html' with the path to the HTML page you want to navigate to
+            window.location.href = 'right.html';
+        }
 
         function initializeTracking() {
             reset();
