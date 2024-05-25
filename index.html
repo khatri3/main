@@ -225,26 +225,64 @@ button:hover {
     background-color: #f3f1f1; /* Example background color */
     display: inline-block; /* Ensures the element maintains its shape if not a block-level element */
 }
-
-.contact-me {
-            margin-left: 50%;
-            cursor: pointer;
-            text-align: center;
-            color: #ffffff;
-            font-size: 16px; /* Adjust font size as needed */
-            padding: 8px 16px; /* Adjust padding as needed */
-            border: 2px solid #f7f9fb;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            display: inline-block; /* Ensures button width fits content */
-            line-height: 1; /* Reset line height */
-            background-color: transparent; /* Reset background color */
-            text-decoration: none; /* Reset text decoration */
-        }
-        .contact-me:hover {
-            background-color: #bfdb9f;
+.mouse1 {
+    position: fixed;
+    top: 20px; /* Adjust the distance from the top as needed */
+    left: 20px; /* Adjust the distance from the left as needed */
+    cursor: pointer;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px; /* Adjust font size as needed */
+    transition: all 0.3s ease;
+    display: inline-block; /* Ensures button width fits content */
+    line-height: 1; /* Reset line height */
+    background-color: transparent; /* Reset background color */
+    text-decoration: none; /* Reset text decoration */
+}
+        .mouse1:hover {
+            background-color: #167b0d;
             color: #fff;
         }
+
+        .blog {
+    position: fixed;
+    margin-top: 7%;
+    top: 20px; /* Adjust the distance from the top as needed */
+    left: 20px; /* Adjust the distance from the left as needed */
+    cursor: pointer;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px; /* Adjust font size as needed */
+    transition: all 0.3s ease;
+    display: inline-block; /* Ensures button width fits content */
+    line-height: 1; /* Reset line height */
+    background-color: transparent; /* Reset background color */
+    text-decoration: none; /* Reset text decoration */
+}
+        .blog:hover {
+            background-color: #134a89;
+            color: #fff;
+        }
+.contact-me {
+    position: fixed;
+    margin-top: 14%;
+    top: 20px; /* Adjust the distance from the top as needed */
+    left: 20px; /* Adjust the distance from the left as needed */
+    cursor: pointer;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px; /* Adjust font size as needed */
+    transition: all 0.3s ease;
+    display: inline-block; /* Ensures button width fits content */
+    line-height: 1; /* Reset line height */
+    background-color: transparent; /* Reset background color */
+    text-decoration: none; /* Reset text decoration */
+}
+        .contact-me:hover {
+            background-color: #dae179;
+            color: #fff;
+        }
+
 
     #clickChartContainer h1 {
     font-family: 'Comic Sans MS', 'Comic Sans', cursive;
@@ -264,10 +302,30 @@ button:hover {
 #controlPanel img {
     cursor: pointer; /* Changes cursor to pointer when hovering over the image */
 }
+.vertical-line {
+    position: absolute; /* Set position to absolute */
+    top: 0; /* Align the line to the top of its container */
+    margin-left: 14%; /* Center the line horizontally and move it 1px to the left */
+    width: 3px; /* Adjust the width of the line */
+    height: 138%; /* Make the line height equal to the height of its container */
+    background-color: #f6f3f3; /* Adjust the color of the line */
+}
 
+
+.vertical-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0; /* Adjust the left position to start from the left edge of the container */
+    transform: translateY(-50%); /* Center the line vertically */
+    width: 100%; /* Make the line width equal to the width of its container */
+    height: 2px; /* Adjust the height of the line */
+    background-color: #ffffff; /* Adjust the color of the line */
+}
 </style>
 </head>
 <body onload="initializeTracking()">
+
     <div id="clickChartContainer">
          <div id="clickChartContainer">
             <h1>Mouse Click Tracker <img src="mouse.png" alt="mouse" class="mouse" >
@@ -308,8 +366,9 @@ button:hover {
         <canvas id="clickChart" width="50" height="25"></canvas>
         <p id="highestScore">Highest Score: 0</p>
     </div>
-    <p class="contact-me" onclick="redirectToAnotherPage3()">mouse tracker</p>
-  <p class="contact-me" onclick="redirectToAnotherPage1()">Blogs</p>
+    <div class="vertical-line"></div>
+    <p class="mouse1" onclick="redirectToAnotherPage3()">mouse tracker</p>
+    <p class="blog" onclick="redirectToAnotherPage1()">Blogs</p>
     <p class="contact-me" onclick="redirectToAnotherPage2()">Contact me</p>
      <p>the CPS Mouse Click Tracker, your ultimate tool for mastering Clicks Per Second (CPS) effortlessly. With a simple and accessible interface, this tracker empowers you to monitor your CPS in real-time with just a few clicks.
         No more complex setups or confusing interfaces – the CPS Mouse Click Tracker offers clear, actionable data right at your fingertips. Whether you're a casual gamer or a competitive pro, tracking your progress is now easier than ever.    
