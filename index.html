@@ -79,7 +79,7 @@ button:hover {
     padding: 60px 150px; /* Adjust padding as needed */
     font-size: 24px;
     background-color: #1e2020eb;
-    color: white;
+    color: rgb(255, 255, 255);
     border: none;
     position: relative;
     border-radius: 10px;
@@ -217,6 +217,15 @@ button:hover {
             background-color: #bfdb9f;
             color: #fff;
         }
+        .mouse {
+    width: 40px; /* Adjust width as needed */
+    height: 40px; /* Adjust height as needed */
+    border-radius: 50%; /* Makes the element round */
+    /* Optional: Add border, background, etc. */
+    background-color: #f3f1f1; /* Example background color */
+    display: inline-block; /* Ensures the element maintains its shape if not a block-level element */
+}
+
 .contact-me {
             margin-left: 50%;
             cursor: pointer;
@@ -236,13 +245,39 @@ button:hover {
             background-color: #bfdb9f;
             color: #fff;
         }
+
+    #clickChartContainer h1 {
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    text-decoration: underline; /* Adds underline to the text */
+    color: #323732;
+}
+#controlPanel {
+    text-align: center; /* Optional: centers items horizontally within the container */
+}
+
+#controlPanel button, #controlPanel img {
+    display: inline-block;
+    vertical-align: middle; /* Aligns items vertically in the center */
+    margin: 5px; /* Optional: adds space around items */
+}
+
+#controlPanel img {
+    cursor: pointer; /* Changes cursor to pointer when hovering over the image */
+}
+
 </style>
 </head>
 <body onload="initializeTracking()">
     <div id="clickChartContainer">
-        <img src="right.png" alt="Right Click" class="right-click-icon" title="Right Click" onclick="redirectToAnotherPage()">⇦right-click
-        <h1>Mouse Click Tracker</h1> 
+         <div id="clickChartContainer">
+            <h1>Mouse Click Tracker <img src="mouse.png" alt="mouse" class="mouse" >
+            </h1>
+        </div>
+       
+       
+        
         <p>First set time between 1, 5, 10, 20, or 60 seconds:</p>
+        <div id="controlPanel">
         <select id="timeInterval">
             <option value="1">1 second</option>
             <option value="5" selected>5 seconds</option>
@@ -250,7 +285,10 @@ button:hover {
             <option value="20">20 seconds</option>
             <option value="60">60 seconds</option>
         </select>
-        <button onclick="initializeTracking()">➊ Set / Reset</button>
+        
+            <button onclick="initializeTracking()">➊ Set / Reset</button>　TRY Right ➡
+            <img src="right.png" alt="Right Click" class="right-click-icon" title="Right Click" onclick="redirectToAnotherPage()">
+        </div>
         <p id="clickCounter">CPS: 0</p>
         <div id="progressBarContainer">
             <div id="progressBar"></div>
